@@ -3,6 +3,8 @@ chrome = isChrome ? chrome : browser;
 
 function getAll (extensionsList) {
 
+  console.log(extensionsList);
+
   let isUninstallSupported = !!chrome.management.uninstall;
 
   const filterInput = document.getElementById('filter');
@@ -28,6 +30,7 @@ function getAll (extensionsList) {
 
   document.getElementById('btn-manage-extensions').addEventListener('click', () => {
     chrome.tabs.update({ url: "chrome://extensions" });
+   // chrome.tabs.create({ url: "chrome://extensions", active:false });
   }, false);
 }; // end getAll
 

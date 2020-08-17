@@ -5,7 +5,7 @@ function getCheckInputs () {
 }
 
 function createSwitchElement (extension) {
-  return `<div class="sc-dxgOiQ cmgOtW mr-10">
+  return `<div class="sc-dxgOiQ cmgOtW ml-10">
   
   <input class="sc-kpOJdX eFIxha" type="checkbox" id="mainToggle" data-id="${extension.id}">
   
@@ -27,11 +27,14 @@ function createList (extensions, isUninstallSupported = true) {
   ulList.innerHTML = '';
   extensions.forEach(extension => {
     ulList.innerHTML += `
-<li id="${extension.id}"  class="w-25">
-  ${isUninstallSupported ? `<button class="btn btn-danger" data-id="${extension.id}">RM</button>`:''}
+<li id="${extension.id}">
+  ${isUninstallSupported ? `<button class="btn btn-danger" data-id="${extension.id}">RM</button>` : ''}
   <div class="ext-d">
-    <p class="w-75 fs-12">${extension.name}</p>    
-    <span class="badge ${extension.isApp ? 'bg-g' : ''} w-25">${extension.isApp ? 'a' : 'e'}</span>
+    <div class="fs-12 d-flex truncate">
+      <img src="${extension.icons[0].url}" alt="${extension.name}" class="mr-5" />
+      <span class="truncate">${extension.name}</span>
+    </div>    
+    <span class="badge ${extension.isApp ? 'bg-g' : ''}">${extension.isApp ? 'a' : 'e'}</span>
   </div>
   ${createSwitchElement(extension)}
 </li>`});
@@ -61,7 +64,9 @@ function enableDisableExt (checkInput) {
         extLi.classList.remove('bg-rose');
       }
 
-      new Audio('assets/close.mp3').play();
+      let audio = new Audio('assets/close.mp3');
+      audio.volume = .2;
+      audio.play();
     });
   }); // object loop
 }
