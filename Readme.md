@@ -1,10 +1,13 @@
-### FEDE
-- Free, modern and lightweight chrome extension to manage yours extensions or apps.
+<h1 align="center">FEDE</h1>
+<strong align="center">Modern and lightweight tool to manage extensions or apps in your browser.</strong>
+
+<p align="center">
+  <a href="https://microsoftedge.microsoft.com/addons/detail/nfpechjpmmjkmbghcmeapdcnfheljajp" rel="nofollow">
+    <img src="https://i.imgur.com/n49Wiu2.png" style="max-width:100%;"></a>
+  <br><br>
+</p>
 
 ![Extension toggle](Capture.PNG)
-
-### API
-- Build extension utilities : management
 
 ### Feautres
 - [x] search

@@ -1,5 +1,5 @@
 :root {
-  --bg-main-linear: linear-gradient(to right bottom, rgba(74, 71, 71, 0.788), rgba(23, 22, 21, 0.959) 100%), url(assets/bg.jpg);
+  --bg-main-linear:linear-gradient(to right bottom, rgb(50 79 103), rgba(23, 22, 21, 0.959) 100%);
   --bg-main: #323d48;
 
   --hover: #ffffff1f;
@@ -13,11 +13,6 @@
   --dark-rose: #a22f3a;
 
   --border-color: #262735;
-}
-
-@font-face {
-  font-family: 'Open Sans';
-  src: url(assets/OpenSans-Regular.ttf);
 }
 
 *,

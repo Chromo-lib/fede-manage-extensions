@@ -1,3 +1,6 @@
+let isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+chrome = isChrome ? chrome : browser;
+
 // get all check inputs elements
 function getCheckInputs () {
   let checkInput = document.querySelectorAll('#mainToggle');
@@ -26,15 +29,11 @@ function createList (extensions, isUninstallSupported = true) {
 
   ulList.innerHTML = '';
   extensions.forEach(extension => {
-    ulList.innerHTML += `
-<li id="${extension.id}">
+    ulList.innerHTML += `<li id="${extension.id}">
   ${isUninstallSupported ? `<button class="btn btn-danger" data-id="${extension.id}">RM</button>` : ''}
   <div class="ext-d">
-    <div class="fs-12 d-flex truncate">
-      <img src="${extension.icons[0].url}" alt="${extension.name}" class="mr-5" />
-      <span class="truncate">${extension.name}</span>
-    </div>    
-    <span class="badge ${extension.isApp ? 'bg-g' : ''}">${extension.isApp ? 'a' : 'e'}</span>
+    <span class="truncate">${extension.name}</span>   
+    <span class="badge ${extension.isApp ? 'bg-g' : ''}" title="${extension.isApp ? 'Application' : 'Extension'}">${extension.isApp ? 'a' : 'e'}</span>
   </div>
   ${createSwitchElement(extension)}
 </li>`});
@@ -63,10 +62,6 @@ function enableDisableExt (checkInput) {
         switchElement.classList.add('hzkbkt');
         extLi.classList.remove('bg-rose');
       }
-
-      let audio = new Audio('assets/close.mp3');
-      audio.volume = .2;
-      audio.play();
     });
   }); // object loop
 }
