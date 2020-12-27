@@ -29,10 +29,15 @@ function createList (extensions, isUninstallSupported = true) {
 
   ulList.innerHTML = '';
   extensions.forEach(extension => {
+    let icons = extension.icons;
+    let icon = icons ? icons[icons.length - 1].url : '../assets/icon64.png';
     ulList.innerHTML += `<li id="${extension.id}">
   ${isUninstallSupported ? `<button class="btn btn-danger" data-id="${extension.id}">RM</button>` : ''}
   <div class="ext-d">
-    <span class="truncate">${extension.name}</span>   
+    <div>
+      <img src="${icon}" alt="${extension.name}" class="mr-5" />
+      <span class="truncate">${extension.name}</span>
+    </div>   
     <span class="badge ${extension.isApp ? 'bg-g' : ''}" title="${extension.isApp ? 'Application' : 'Extension'}">${extension.isApp ? 'a' : 'e'}</span>
   </div>
   ${createSwitchElement(extension)}

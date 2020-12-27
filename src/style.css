@@ -35,7 +35,7 @@ body {
   color: var(--white);
   font-size: 12px;
   font-family: 'Open Sans', sans-serif;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth;  
 }
 
 .container {
@@ -44,6 +44,7 @@ body {
   width: 330px;
   scrollbar-width: thin;
   overflow-y: auto;
+  border-bottom: 10px solid var(--dark);
 }
 
 a {
@@ -107,8 +108,9 @@ ul {
 }
 
 .ext-d img {
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
 
 /****************/
@@ -127,7 +129,7 @@ ul {
 button {
   font-size: 10px;
   outline: none !important;
-  transition: background-color 0.25s;
+  transition: background-color 0.2s;
 }
 
 .btn {
@@ -151,31 +153,6 @@ button {
 
 .btn-danger:hover {
   background-color: var(--dark-rose);
-}
-
-/****************/
-footer button {
-  width: 100%;
-  background: transparent;
-  border: 0;
-  color: var(--gray);
-  padding: 10px;
-  text-transform: uppercase;
-  cursor: pointer;
-  letter-spacing: 2px;
-}
-
-footer svg path {
-  fill: var(--gray);
-}
-
-footer button:hover {
-  color: var(--white);
-}
-
-footer>button:hover svg path {
-  color: var(--white);
-  fill: var(--white) !important;
 }
 
 svg {
@@ -234,6 +211,7 @@ svg {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  width: 130px;
 }
 
 /*scroll bar */

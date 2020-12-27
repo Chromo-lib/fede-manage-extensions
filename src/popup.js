@@ -1,4 +1,5 @@
 function getAll (extensionsList) {
+  console.log(extensionsList);
   let isUninstallSupported = !!chrome.management.uninstall;
 
   const filterInput = document.getElementById('filter');
@@ -21,10 +22,6 @@ function getAll (extensionsList) {
       });
     }, false);
   });
-
-  document.getElementById('btn-manage-extensions').addEventListener('click', () => {
-    chrome.tabs.update({ url: "chrome://extensions" });
-  }, false);
 };
 
 chrome.management.getAll(getAll);
